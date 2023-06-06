@@ -21,6 +21,9 @@ class TodoProvider extends ChangeNotifier {
     todo.title = newTodoTitle;
     notifyListeners();
   }
+
+  // Added new comment
+
   // void updateTodo(Todo updatedTodo) {
   //   final index = _todos.indexWhere((todo) => todo.id == updatedTodo.id);
   //   if (index != -1) {
