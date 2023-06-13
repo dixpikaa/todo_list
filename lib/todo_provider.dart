@@ -16,19 +16,11 @@ class TodoProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void updateTodoStatus(int index, String newTodoTitle) {
-    _todos[index].id = isCompleted;
-    
+  void updateTodo(int index, String newTodoTitle) {
+    final todo  = _todos.firstWhere((e) => e.id == index);
+    todo.title = newTodoTitle;
     notifyListeners();
   }
-  void updateTodo(Todo updatedTodo) {
-    final index = _todos.indexWhere((todo) => todo.id == updatedTodo.id);
-    if (index != -1) {
-      _todos[index] = updatedTodo;
-      notifyListeners();
-    }
-  }
-
 
   void deleteTodo(int index) {
     _todos.removeAt(index);
